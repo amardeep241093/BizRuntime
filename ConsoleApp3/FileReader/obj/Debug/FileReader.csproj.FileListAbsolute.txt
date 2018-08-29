@@ -1,0 +1,7 @@
+C:\Users\DELL\source\repos\ConsoleApp3\FileReader\bin\Debug\FileReader.exe.config
+C:\Users\DELL\source\repos\ConsoleApp3\FileReader\bin\Debug\FileReader.exe
+C:\Users\DELL\source\repos\ConsoleApp3\FileReader\bin\Debug\FileReader.pdb
+C:\Users\DELL\source\repos\ConsoleApp3\FileReader\obj\Debug\FileReader.csprojAssemblyReference.cache
+C:\Users\DELL\source\repos\ConsoleApp3\FileReader\obj\Debug\FileReader.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\ConsoleApp3\FileReader\obj\Debug\FileReader.exe
+C:\Users\DELL\source\repos\ConsoleApp3\FileReader\obj\Debug\FileReader.pdb
