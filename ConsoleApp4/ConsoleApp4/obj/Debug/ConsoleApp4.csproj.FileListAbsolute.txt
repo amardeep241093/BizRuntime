@@ -5,3 +5,10 @@ J:\C#\ConsoleApp4\ConsoleApp4\bin\Debug\ConsoleApp4.exe
 J:\C#\ConsoleApp4\ConsoleApp4\bin\Debug\ConsoleApp4.pdb
 J:\C#\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.exe
 J:\C#\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.pdb
+J:\C#\New folder\BizRuntime\ConsoleApp4\ConsoleApp4\bin\Debug\ConsoleApp4.exe.config
+J:\C#\New folder\BizRuntime\ConsoleApp4\ConsoleApp4\bin\Debug\ConsoleApp4.exe
+J:\C#\New folder\BizRuntime\ConsoleApp4\ConsoleApp4\bin\Debug\ConsoleApp4.pdb
+J:\C#\New folder\BizRuntime\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.csprojAssemblyReference.cache
+J:\C#\New folder\BizRuntime\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.csproj.CoreCompileInputs.cache
+J:\C#\New folder\BizRuntime\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.exe
+J:\C#\New folder\BizRuntime\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.pdb

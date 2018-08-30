@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ConsoleApp4.TaskParallel.TaskParallel</StartupObject>
+    <StartupObject>ConsoleApp4.TaskParallel.TaskUsingLambdaExp</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
