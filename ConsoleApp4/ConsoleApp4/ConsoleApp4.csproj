@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ConsoleApp4.TaskParallel.TaskUsingLambdaExp</StartupObject>
+    <StartupObject>ConsoleApp4.Network_Programming.Server</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -53,6 +53,10 @@
     <Compile Include="Exception\FinallyBlock.cs" />
     <Compile Include="Exception\FormatException.cs" />
     <Compile Include="Exception\TypingExceptionNameInFile.cs" />
+    <Compile Include="Network Programming\Client.cs" />
+    <Compile Include="Network Programming\Server.cs" />
+    <Compile Include="Network Programming\WebBrowser.cs" />
+    <Compile Include="Network Programming\WebServer.cs" />
     <Compile Include="Serialization\AnonymousMethod.cs" />
     <Compile Include="TaskParallel\ContinuationTask.cs" />
     <Compile Include="TaskParallel\TaskOnArray.cs" />
