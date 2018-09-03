@@ -1,0 +1,7 @@
+{
+ "Ename": "Manish",
+ "Eid": 102,
+ "Eaddress": "BTM 2nd Stage",
+ "Ecompany": "BizRuntime"
+  "Esalary": 20000
+};
