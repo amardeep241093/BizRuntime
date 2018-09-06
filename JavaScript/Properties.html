@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Encapsulation: only programmer has control over the program</title>
+</head>
+<body>
+     <script type="text/javascript">
+
+       /*  function Employee(age)
+         {
+             this.age = age;  //public fields
+         }
+         var emp = new Employee(30);
+         emp.age = 1000; //any one can modifies the value
+         alert(emp.age);
+
+       */
+
+         function Employee(name, age)
+         {
+             var name = name; //private
+             var age = age;
+
+             Object.defineProperty(this, "name", {
+                 get: function () {
+                     return name;
+                 }
+             });
+
+             Object.defineProperty(this, "age", {
+                 get: function () {
+                     return age;
+                 },
+                 set: function (value) {
+                     if ((value < 5) || (value > 100)) {
+                         alert("invalid age");
+                     }
+                     else {
+                         age = value;
+                     }
+                 }         
+             });
+         }
+
+         var employee = new Employee("Amardeep", 30);
+         employee.name = "Sandeep"; //cannot change the read property
+         employee.age = 1000;
+        alert("Name:" + employee.name + " " + "age:" + employee.age);
+     </script>
+</body>
+</html>

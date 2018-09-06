@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- global namesspace pollution causes names collision -->
+    <script type="text/javascript" src="TeamA.js"></script>
+    <script type="text/javascript" src="TeamB.js"></script>
+</head>
+<body>
+    <div id= "ResultDiv"></div>
+    <script type="text/javascript">
+
+        document.getElementById("ResultDiv").innerHTML = new Student("Ram", "Shyam").getStudentData();
+
+    </script>
+
+</body>
+</html>

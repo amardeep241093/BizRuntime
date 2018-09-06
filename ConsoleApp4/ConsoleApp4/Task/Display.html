@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <script>
+
+        // Called on body's `onload` event
+        function init()
+        {
+            // Retrieving the text input's value which was stored into localStorage
+            var fullName = localStorage.getItem("fullName");
+            var UserName = localStorage.getItem("UserName");
+            var contact = localStorage.getItem("contact");
+            var password = localStorage.getItem("password");
+
+            // Writing the value in the document
+            document.write("fullName value = " + fullName + "<br/>");
+            document.write("UserName value = " + UserName + "<br/>");
+            document.write("Contact value = " + contact + "<br/>");
+            document.write("password value = " + password);
+        }
+
+    </script>
+    </head >
+   
+    <body onload="init();">
+
+
+    </body>
+</html>

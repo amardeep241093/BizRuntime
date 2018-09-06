@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Polymorphism</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        var Shape = function () { }
+        Shape.prototype.Draw = function () {
+            return "I m generics Shape";
+        }
+
+        var Circle = function () { }
+        Circle.prototype = Object.create(Shape.prototype);
+        Circle.prototype.Draw = function ()
+        {
+            return "I am a circle";
+        }
+
+        var Triangle = function () { }
+        Triangle.prototype = Object.create(Shape.prototype);
+        Triangle.prototype.Draw = function ()
+        {
+            return "I am a Triangle";
+        }
+
+        var Rectangle = function () { }
+        Rectangle.prototype = Object.create(Shape.prototype);
+        Rectangle.prototype.Draw = function () {
+            return "I am a Rectangle";
+        }      
+
+        var Square = function () { }
+        Square.prototype = Object.create(Shape.prototype);
+
+        var shapes = [new Shape(), new Circle(), new Triangle(), new Rectangle(), new Square()];
+        shapes.forEach(function (shape) {
+            document.write(shape.Draw() + "<br/>");
+        });
+  
+
+
+
+    </script>
+
+</body>
+</html>

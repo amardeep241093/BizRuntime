@@ -1,0 +1,31 @@
+<!Doctype html>
+<html>
+<head>
+	<title>JSON Tutorial4</title>
+</head>
+<body>
+
+      <script type="text/javascript">
+      	var data = {
+      		"Name" : "Amardeep", 
+      		"Number" : 30,
+                  "color": ["ornage", "apple", "Mango"],
+                  "condition": true,
+                  "friends":{
+                        "Delhi": "vikram",
+                        "Noida": "Jigyasu",
+                        "Bangalore": "Manas"
+                  }
+      	};
+      	
+      	document.write(data["Name"] + ' ');
+      	data.city = "Kolkata";
+            document.write(data["city"] + ' ');
+            document.write(data.color[2]+ ' ');
+            document.write(data.Number + ' ');
+            document.write(data.friends.Noida + ' ');
+
+           
+      </script>
+</body>
+</html>

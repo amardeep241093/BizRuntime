@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+
+<body>
+    <script type="text/javascript">
+        //object literals are singleton:
+        //var employee =
+        //{
+           
+        //    Ename: "Prabin",
+        //    Eid: 2001
+           
+        //}
+
+        //var student = employee;
+
+
+        //construction function:changes made to one instance will not affect the other
+        var employee = function()
+        {
+            this.Ename = "Amardeep"
+            this.Eid = 1234
+        }
+        var NewEmployee = new employee();
+        var OldEmployee = new employee();
+
+        document.write("Before changes <br/>");
+        document.write("NewEmployee name:" + NewEmployee.Ename + "<br/>");
+        document.write("OldEmployee Eid:" + OldEmployee.Eid + "<br/>");
+
+        NewEmployee.Ename = "BizRuntime";
+        OldEmployee.Eid = 3111;
+        
+        document.write("After changes <br/>");
+        document.write("OldEmployee name:" + OldEmployee.Ename + "<br/>");
+        document.write("NewEmployee Eid:" + NewEmployee.Eid + "<br/>");
+        document.write("OldEmployee Eid:" + OldEmployee.Eid + "<br/>");
+
+    </script>
+</body>
+</html>

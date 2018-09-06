@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Inheritance is prototype based in Javascript</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //base object
+        var Employee = function (name)
+        {
+            this.name = name;
+        }
+        //function added for base object
+        Employee.prototype.GetName = function ()
+        {
+            return this.name;
+        }
+
+        Employee.prototype.GetNameLength = function () {
+            return this.name.length;
+        }
+
+        //derived object
+        var PermanentEmployee = function (annualSalary)
+        {
+            this.annualSalary = annualSalary;
+        }
+
+        var employee = new Employee("Amar");
+        //using prototype to associate emplyoee as a base object for derived object i
+        PermanentEmployee.prototype = employee; //implementing inheritance
+        var pe = new PermanentEmployee(20000);
+       
+        document.write(pe.GetName());
+        document.write(pe.GetNameLength());
+        alert(pe instanceof Employee);
+        alert(pe instanceof PermanentEmployee);
+        //determine property belong to that specific object or not
+        document.write(employee.hasOwnProperty('Name'));
+        document.write(pe.hasOwnProperty('annualSalary'));
+
+
+
+    </script>
+</body>
+</html>

@@ -18,6 +18,8 @@ namespace JSON
 
     class Serialization_JSON_Object
     {
+        public static object JsonConvert { get; private set; }
+
         static void Main(string[] args)
         {
             Account account = new Account

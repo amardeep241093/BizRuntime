@@ -1,0 +1,25 @@
+<!Doctype html>
+<html>
+<head>
+	<title>JSON Tutorial4</title>
+</head>
+<body>
+
+      <script type="text/javascript">
+      	var data = {
+          "Name": "Raju",
+          "Number": 30,
+          "condition": false,
+      		"Name" : ["Amardeep", "Manas", "Anuja"]
+      		
+      	};
+
+        var data2= '{"Name":"Santosh", "Number": 45, "condition": true}';
+            var json_object = JSON.parse(data2);
+            document.write(json_object.Name + ' ');
+            document.write(json_object.Number + ' ');
+            document.write(json_object.condition);
+
+      </script>
+</body>
+</html>

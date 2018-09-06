@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Abstract Class</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        var Shape = function ()
+        {
+            this.ShapeName = 'none';
+            throw new Error("cannot create an instance of abstract class");
+        }
+
+        Shape.prototype.Draw = function ()
+        {
+            return "Drawing" + "" + this.ShapeName;
+        }
+
+       // var shape = new Shape(); //gives error
+
+        var Circle = function (ShapeName)
+        {
+            return this.ShapeName = ShapeName;
+        }
+
+        Circle.prototype = Object.create(Shape.prototype);
+        var circle = new Circle("Circle");
+        document.writeln(circle.Draw());
+
+        alert(circle instanceof Circle);
+        window.alert(circle instanceof Shape);
+
+
+    </script>
+
+</body>
+</html>

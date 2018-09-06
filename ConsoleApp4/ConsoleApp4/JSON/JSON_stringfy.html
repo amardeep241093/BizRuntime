@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+<head>
+	<title>JSON Tutorial4</title>
+</head>
+<body>
+
+      <script type="text/javascript">
+      	"Name" : ["Amardeep", "Manas", "Anuja"], 
+          "Records":[
+                  {"city":"Bangalore","Name":"Sandeep"},
+                  {"city":"Mumbai","Name":"Sujeet"},
+                  {"city":"Chennai","Name":"Rajdeep"},
+                   {"city":"Delhi","Name":"Anil"},
+                  {"city":"Noida","Name":"Sushant"}
+
+                  ]
+        };
+      	
+            function sendJSON()
+             {
+                 window.location  = 'HandleJSON.php?x=' + JSON.stringfy(data);     // body...
+            }
+
+      </script>
+      <button onclick="sendJSON()">send JSON Data</button>
+</body>
+</html>

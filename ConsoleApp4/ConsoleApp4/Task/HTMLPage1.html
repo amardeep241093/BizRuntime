@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+    <title>Using the while loop</title>
+    <script language="javascript">
+function display()
+{
+var loopIndex = 0, students = new Array(6);
+students[0] = "George";
+students[1] = "Ed";
+students[2] = "Stella";
+students[3] = "Ted";
+students[4] = "Liz";
+students[5] = "Cary";
+students[6] = "Nancy";
+students[7] = "Zack";
+while(students[loopIndex] != "Nancy" && loopIndex <
+students.length - 1){
+loopIndex++;
+}
+
+if(loopIndex <= students.length - 1){
+document.getElementById('targetDiv').innerHTML =
+"I found Nancy at student location " + loopIndex;
+}
+else {
+document.getElementById('targetDiv').innerHTML =
+"I did not find Nancy.";
+}
+}
+    </script>
+</head>
+<body>
+    <h1>Using the while loop</h1>
+    <input type="button" onclick="display()" value="Click Here">
+    <div id="targetDiv">
+    </div>
+</body>
+</html>

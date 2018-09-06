@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<body>
+    <script type="text/javascript">
+        //creation of object using constructor function
+        //function Student(firstName, lastName)
+        //{
+        //    this.firstName = firstName;
+        //    this.lastName = lastName;
+        //    this.getFullName = function ()
+        //    {
+        //        return firstName + " " + lastName;
+        //    }
+        //}
+        //var student = new Student("Amar", "Deep");
+
+       //using literal notation
+        var student = {
+            firstName: "Sandeep",
+            lastName: "Kumar",
+            address: "BTM",
+
+            getStudentData: function ()
+            {
+                return this.firstName + " " + this.lastName + " " + this.address;
+            }
+        }
+        document.write(student.firstName + "<br/>");
+        document.write(student.lastName + "<br/>");
+        document.write(student.address + "<br/>");
+        document.write(student.getStudentData());
+
+
+    </script>
+
+</body>
+</html>
+<body>
+
+</body>
+</html>

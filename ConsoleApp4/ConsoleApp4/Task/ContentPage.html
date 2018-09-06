@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   
+</head>
+
+<body>
+    <div class="container">
+       
+        <form  method="Get" onsubmit="return validation()">
+
+            <div class="form-group">
+                <label>FullName:</label>
+                <input type="text" name=" fullName" class="form-control" id="fullName" autocomplete="off" />
+                <span id="Name" class=" text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>UserName</label>
+                <input type="text" name="UserName" class="form-control" id="UserName" autocomplete="off" />
+                <span id="User" class=" text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="text" name="password" class="form-control" id="password" autocomplete="off" />
+                <span id="Pass" class=" text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Contact</label>
+                <input type="text" name=" contact" class="form-control" id="contact" autocomplete="off" />
+                <span id="Contact" class=" text-danger"></span>
+            </div>
+
+            <input type="submit" name="submit" value="submit" />
+        </form>
+        </div>
+  
+              
+    <script type="text/javascript">
+
+        function validation()
+        {
+            var Fullname = document.getElementById('fullName').value;
+            var userName = document.getElementById("UserName").value;
+            var cont = document.getElementById("contact").value;
+            var Password = document.getElementById("password").value;
+
+            if (Fullname == "") 
+            {
+                document.getElementById('Name').innerHTML = " ** Please Enter FullName fields";
+                return false;
+            }
+            //if ((Fullname.length <= 2) || (Fullname.length > 20))
+            //{
+            //    document.getElementById('Name').innerHTML = " **FullName must be between 2 and 20";
+            //    return false;
+            //}
+
+            //if (!isNaN(Fullname))
+            //    {
+            //    document.getElementById("Name").innerHTML = " **only character are allowed";
+            //    return false;
+            //   }
+
+            if (userName == "")
+            {
+                document.getElementById('User').innerHTML = " ** Please Enter UserName fields";
+                return false;
+            }
+
+            if (!isNaN(userName))
+            {
+                document.getElementById("User").innerHTML = " **only character and number are allowed";
+                return false;
+            }
+
+          
+
+            if ((Password == "") && Password.search(/[a - z]/ == -2) && Password.search(/[0 - 9]/ == -2) && Password.search(/[A - Z]/ == -2) &&
+                Password.search(/[!\@\#\$\%\^\&\*\(\)\,\.\?\>\<\~\:]/ == -2)) {
+                document.getElementById('pass').innerHTML = " ** Please Enter password fields";
+                return false;
+            }
+
+            if (cont == "") {
+                document.getElementById('Contact').innerHTML = " ** Please Enter Conatct No. fields";
+                return false;
+            }
+
+            if (isNaN(cont)) {
+                document.getElementById("Contact").innerHTML = " **only Numbers are allowed";
+                return false;
+            }
+
+            if (cont.length != 10)
+            {
+                document.getElementById("Contact").innerHTML = " **contact no. should be 10 digits";
+                return false;
+            }
+
+           
+
+            localStorage.setItem("fullName", Fullname);
+            localStorage.setItem("UserName", userName);
+            localStorage.setItem("contact", cont);
+            localStorage.setItem("password", Password);
+            open(Display.html);
+
+           // window.location.replace("J:\C#\New folder\BizRuntime\ConsoleApp4\ConsoleApp4\Task\Display.html");
+
+
+        }
+
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+<head>
+	<title>JSON Tutorial4</title>
+</head>
+<body>
+
+      <script type="text/javascript">
+      	var data = {
+      		"Name" : ["Amardeep", "Manas", "Anuja"], 
+      		"Records":[
+                  {"city":"Bangalore","Name":"Sandeep"},
+                  {"city":"Mumbai","Name":"Sujeet"},
+                  {"city":"Chennai","Name":"Rajdeep"},
+                   {"city":"Delhi","Name":"Anil"},
+                  {"city":"Noida","Name":"Sushant"},
+
+                  ]
+      	};
+      	
+      	for(index in data.Name)
+            {
+                  document.write(index + "<br/>");
+
+            }
+ 
+            for(index in data.Name)
+            {
+                  document.write(data.Name[index] + "<br/>");
+
+            }
+           for(index=0; index < data.Name.length; index++)
+            {
+                  document.write(data.Name[index] + "<br/>");
+
+            }
+            for(key in data.Records)
+            {
+                  for(inner_key in data.Records[key])
+                  {
+                  document.write(data.Records[key][inner_key] + "<br/>");
+                  }
+
+            }
+            */
+            document.write(data.Records[2]["city"] + ' ');
+            document.write(data.Records[3]["Name"]);
+      </script>
+     
+      </body>
+      </html>

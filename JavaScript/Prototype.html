@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Prototype</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        function Employee(Name)
+        {
+            this.name = Name;
+            //this.GetName = function ()
+            // {
+            //    return this.name;   //first approach
+            //}
+        }
+
+        //var e1 = new Employee("Amar");
+        //e1.GetName = function ()
+        //{                                  //second approach: associating object with function
+        //    return this.name;
+        //}
+
+        //var e2 = new Employee("deep");
+        //e2.GetName = function ()
+        //{
+        //    return this.name;
+        //}
+        //document.write(e1.GetName());
+        //document.write(e2.GetName());
+
+        //Employee.GetName = function () {
+        //    return this.Name;
+        //}
+        //var e3 = new Employee("Sanjay");
+        //document.write(e1.GetName());
+
+        Employee.prototype.GetName = function () //3rd approach: employee object is associated with function using prototype property
+        {
+            return this.name;     
+        }
+         var e4 = new Employee("Amar");
+         var e5 = new Employee("Akash");
+         document.write(e4.GetName());
+         document.write(e5.GetName());
+
+
+
+
+    </script>
+</body>
+</html>

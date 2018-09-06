@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<body>
+     <script type="text/javascript">
+
+         function Employee(firstName, lastName)
+         {
+             //public fields
+             this.firstName = firstName;
+             this.lastName = lastName;
+
+             //private fields
+             var privateFullName;
+
+             //private function
+             var privateGetFullName = function ()
+             {
+                 privateFullName = firstName + " " + lastName;
+                 return privateFullName;
+             }
+
+             //privileged function
+             this.privilegedGetFullName = function ()
+             {
+                 return privateGetFullName;
+             }
+
+             //public function
+             Employee.prototype.publicGetFullName = function ()
+             {
+                 return this.privilegedGetFullName;
+             }
+         }
+
+         var employee = new Employee("Amar", "deep");
+         document.write(employee.publicGetFullName() + "<br/>");
+         document.write(employee.privilegedGetFullName() + "<br/>");
+        // employee.privateGetFullName();//error
+         //employee.privateFullName;//error
+
+         employee.privateFullName = "Sandeep";
+         document.write(employee.privateFullName);//sandeep
+     </script>
+
+</body>
+</html>
