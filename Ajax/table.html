@@ -1,0 +1,87 @@
+<head>
+    <script type="text/javascript" src="ajax_form.js"></script>
+    <style>
+        .error {
+            display: none;
+            color: #a00000;
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/javascript">     
+        function HideAllErrorFields () {
+            for (var i = 1; i <= 4; i++) {
+                var field = document.getElementById ("error" + i);
+                field.style.display = "none";
+            }
+        }
+
+        function ShowErrorFields (idsStr) {
+            var ids = idsStr.split (",");
+            for (var i = 0; i < ids.length; i++) {
+                var field = document.getElementById ("error" + ids[i]);
+                if (field) {
+                    field.style.display = "block";
+                }
+            }
+        }
+
+        function AjaxSend (form, url, method) {
+                // hide all error fields
+            HideAllErrorFields ();
+            
+                // get message data
+            var data = GetMessageBody (form);   // defined in ajax_form.js
+
+                // send the request
+            var httpRequest = CreateRequestObj ();  // defined in ajax_form.js
+                // try..catch is required if working offline
+            try {
+                httpRequest.open (method, url, false);  // synchron
+                httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                httpRequest.send (data);
+            }
+            catch (e) {
+                alert ("Cannot connect to the server!");
+                return;
+            }
+
+                // handle the response
+            if (IsRequestSuccessful (httpRequest)) {    // defined in ajax_form.js
+                if (httpRequest.responseText === "ok") {    // registration is successful
+                    alert ("Thank you for registering");
+                    /*
+                        // if redirection is required
+                    location.href = "/index.php";
+                    */
+                }
+                else {  // some fields are invalid
+                    ShowErrorFields (httpRequest.responseText);
+                }
+            }
+            else {
+                alert ("An error occurred while registering. Please try it again.");
+            }
+        }
+    </script>
+</head>
+<body>
+    This is a sample registration form.
+    The username must be between 2 and 20 characters, the password must be between 6 and 20 characters.
+    A user named Dottoro is already registered.
+    <br />
+    Try to register both valid and invalid values!
+    <br /><br />
+    <form onsubmit="AjaxSend (this, 'register.php', 'post'); return false;">
+        User Name: <input type="text" name="userName" />
+        <div class="error" id="error1">Must be between 2 and 20 characters.</div>
+        <div class="error" id="error2">A user already exists with the same name.</div>
+        <br /><br />
+        Password: <input type="password" name="password" />
+        <div class="error" id="error3">Must be between 6 and 20 characters.</div>
+        <br /><br />
+        Repeat Password: <input type="password" name="repassword" />
+        <div class="error" id="error4">Must be the same as the password.</div>
+        <br /><br />
+        <input type="submit" value="Register" />
+    </form>
+</body>

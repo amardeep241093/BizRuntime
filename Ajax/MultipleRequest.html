@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Multiple HTTPRequest to the Server</title>
+    </head>
+    <body>
+
+<div id ="Group">Display the message</div>
+<form>
+<button type="button" onclick = "GetData('J:\Ajax\Hello.txt')">Fetch the data1</button>
+<button type="button" onclick = "GetData('J:\Ajax\Hello1.txt')">Fetch the data2</button>
+</form>
+
+<body>
+    <script type="text/javascript">
+    
+       function GetData(dataSource)
+       {
+         var XmlHttpRequestObject = new XMLHttpRequest();
+         XmlHttpRequestObject.open("GET", dataSource, true);
+         XmlHttpRequestObject.onreadystatechange = function()
+         {
+             if((XmlHttpRequestObject.readyState == 4) && (XmlHttpRequestObject.status == 200))
+             {
+                 alert("data transfer from server is OK");
+                 document.getElementById("Group").innerHTML = XmlHttpRequestObject.responseText;
+             }
+         };
+         XmlHttpRequestObject.send();
+         
+       }
+
+        
+    
+    </script>
+</body>

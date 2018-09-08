@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Ajax program</title>
+    </head>
+    <body>
+
+<div id ="ServerResponse">Send the request</div>
+<button type="button">SEND</button>
+
+<script type = "text/javascript">
+
+        var req = new XMLHttpRequest();
+        req.onload = function()
+        {
+           var serverResponse= document.getElementById("ServerResponse");
+           serverResponse.innerHTML = this.responseText;   
+            
+        };
+        req.open("POST", "dom.php?", true);
+        //req.setRequestHeader("content-type", "application/www.demo.urlencode");
+        req.send("name=Amar&address=BTM");
+    
+
+</script>
+ </body>
+</html>

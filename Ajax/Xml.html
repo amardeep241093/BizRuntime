@@ -1,0 +1,40 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Ajax program</title>
+    </head>
+    <body>
+        <div id="demo">Send the XML request</div>
+<button type="button" onclick = "ColorName('data1.xml', 'demo')">SEND</button>
+
+<script type = "text/javascript">
+
+    function ColorName(xml, demo)
+    {
+        var req = new XMLHttpRequest();
+        req.open("GET", "data1.xml", true);
+        var obj = document.getElementById("demo")
+        req.onreadystatechange = function()
+        {
+            
+             if(req.readyState == 4 && req.status == 200)
+            {
+                alert("download is complete");
+                var xmlDocument = req.responseXML;
+                colors = xmlDocument.getElementsByTagName("color");
+               obj.innerHTML = "Here are the fetched colors:<ul>";
+              for (loopIndex =0; loopIndex < colors.length; loopIndex++)
+                 {
+                    obj.innerHTML += "<li>" +
+                    colors[loopIndex].firstChild.data + "</li>";
+                }
+                    obj.innerHTML += "</ul>";                
+            }
+        };
+        req.send();
+    }
+
+
+</script>
+    </body>
+       </html>

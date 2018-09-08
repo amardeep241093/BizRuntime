@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Ajax program</title>
+    </head>
+    <body>
+
+<div id ="main">Send the request</div>
+<button type="button" onclick = "MyFunction()">SEND</button>
+
+<script type = "text/javascript">
+
+    function MyFunction()
+    {
+        alert("object is created");
+        var req = new XMLHttpRequest();
+        alert("configuration is successful ");
+        req.open("GET", "data.txt", true);
+        req.send();
+
+        req.onreadystatechange = function()
+        {
+            
+             if(req.readyState == 4 && req.status == 200)
+            {
+                alert("download is complete");
+                document.getElementById("main").innerHTML = req.responseText;   
+            }
+        };
+    }
+
+</script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Ajax program</title>
+        <script type = "text/javascript">
+
+            function MyFunction1()
+            {
+               var req = new XMLHttpRequest();
+               req.open("GET", "Hello.txt", true);
+               req.send();
+        
+                this.onreadystatechange = function()
+                {
+                    
+                     if(this.readyState == 4 && this.status == 200)
+                    {
+                        document.getElementById("main").innerHTML = this.responseText;   
+                    }
+                };
+            }
+        
+            function MyFunction2()
+            {
+               var req = new XMLHttpRequest();
+               req.open("GET", "Hello1.txt", true);
+               req.send();
+        
+                this.onreadystatechange = function()
+                {
+                    
+                     if(this.readyState == 4 && this.status == 200)
+                    {
+                        document.getElementById("main").innerHTML = this.responseText;   
+                    }
+                };
+            }
+        
+        </script>
+    </head>
+    <body>
+
+<div id ="main">Display the message</div>
+<form>
+<button type="button" onclick = "MyFunction1()">SEND1</button>
+<button type="button" onclick = "MyFunction2()">SEND2</button>
+</form>
+
+
+    </body>
+</html>

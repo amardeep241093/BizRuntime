@@ -195,6 +195,7 @@
     <Content Include="JSON\JSON_stringfy.html" />
     <Content Include="Task\ContentPage.html" />
     <Content Include="Task\Display.html" />
+    <Content Include="Task\HTMLPage1.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="JSON\.git\objects\info\" />
