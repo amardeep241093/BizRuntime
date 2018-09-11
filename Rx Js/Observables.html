@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="Rx Js.js"></script>
+</head>
+<body>
+    <button>Click Me</button>
+    <script>
+       var button = document.querySelector("button");
+      
+       var observer = {
+           next : function(value){
+               console.log(value);
+           },
+           error : function(error){
+           console.log(error);
+           },
+           complete : function(){
+               console.log('completed');
+           }
+      };
+      // Rx.Observable.fromEvent(button, 'click');
+      Rx.Observable.create(function(obs){
+         try{ //can passed multiple value
+          obs.next("deliver a value"); 
+         // obs.error(error);
+          obs.next("second value");
+          obs.complete();
+          obs.next("Third value");
+         }
+         catch(error){
+             obs.error(error);
+         }
+     })
+     .subscribe(observer); 
+    </script>
+
+ 
+</body>
+</html>

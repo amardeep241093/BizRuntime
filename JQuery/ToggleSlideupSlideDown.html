@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jQueryLibrary.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#btn").click(function(){
+        $("#panel").slideUp("slow", function()
+        {
+           $("#p1").show(2000, function(){
+               $(this).hide();
+           });
+           $("#p1").show(2000, function(){
+               $(this).show();
+           });
+        });
+    });
+    $("#btn1").click(function(){
+        $("#flip").slideDown("slow", function(){
+            alert("slideDown");
+        });
+    });
+    $("#btn2").click(function(){
+        $("#flip").slideToggle("slow",function(){
+            alert("SlideToggle");
+        });
+    });
+});
+</script>
+
+<style> 
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+</style>
+</head>
+<body>
+ 
+<div id="flip">Click to slide the panel down or up</div>
+<div id="panel">Hello world!</div>
+<p id = "p1">This is BizRuntime</p>
+<button id ="btn">SlideUp</button>
+ <button id ="btn1">SlideDown</button>
+ <button id ="btn2">SlideToggle</button>
+
+</body>
+</html>

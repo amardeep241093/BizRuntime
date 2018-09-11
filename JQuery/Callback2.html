@@ -5,15 +5,21 @@
 <script>
 $(document).ready(function(){
     $("button").click(function(){
-        $("p").hide(1000);
-        alert("The paragraph is now hidden");
-    });
+        $("p").hide(1000, function(){
+            alert("The paragraph is now hidden");
+        });
+    });   
+    $("button").click(function(){
+        $("p").show(1000, function(){
+            alert("The paragraph is now show");
+        });
+    });   
 });
 </script>
 </head>
 <body>
 
-<button>Hide</button>
+<button>click Me</button>
 
 <p>This is a paragraph with little content.</p>
 

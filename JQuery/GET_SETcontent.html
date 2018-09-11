@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jQueryLibrary.js"></script>
+</head>
+
+<body>
+    <div class="Container"></div>
+ <div class = "Card One">
+     <h2>I am card One</h2>
+     <p>I am a king in the pack of 52 cards</p>
+ </div>
+
+ <div class = "Card Two">
+        <h2>I am card Two</h2>
+        <p>I am a Queen in the pack of 52 cards</p>
+    </div>
+
+    <div class = "Card Three">
+            <h2>I am card Three</h2>
+            <p>I am a Spade in the pack of 52 cards</p>
+        </div>
+
+        <div class = "Card Four">
+                <h2>I am card Four</h2>
+                <p>I am a Club in the pack of 52 cards</p>
+            </div>
+
+            <div class = "clear"></div>
+            <div class = "all-center">
+                <button id= "GetContent" >GetContent</button>
+                <button id= "SetContent">SetContent</button>
+            </div>
+
+            <script> 
+                    $(document).ready(function(){
+                        var CardOne = $(".Card.One");
+                        var CardTwo = $(".Card.Two");
+                        var CardThree = $(".Card.Three");
+                        var CardFour = $(".Card.Four");
+
+                  //Get Content
+                        $("#GetContent").click(function(){
+                           alert(CardOne.text());
+                        });
+                    
+                    //Set Content dynamically
+                    $("#SetContent").click(function(){
+                           CardOne.text("text content of card one changed successfully");
+                        });
+                    $("#SetContent").click(function(){
+                           CardFour.text("text content changed successfully");
+                        });
+                       
+                    });
+                    </script> 
+</body>
+</html>

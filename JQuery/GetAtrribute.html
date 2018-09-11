@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jQueryLibrary.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        alert($("#w3").attr("href"));
+        document.write($("#w3").attr("href"));
+    });
+});
+</script>
+</head>
+<body>
+
+<p><a href="https://www.w3schools.com" id="w3">W3Schools.com</a></p>
+
+<button>Show href Value</button>
+
+</body>
+</html>

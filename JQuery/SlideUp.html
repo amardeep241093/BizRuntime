@@ -5,7 +5,9 @@
 <script> 
 $(document).ready(function(){
     $("#flip").click(function(){
-        $("#panel").slideUp("slow");
+        $("#panel").slideUp("slow", function(){
+            alert("slideUp")
+        });
     });
 });
 </script>

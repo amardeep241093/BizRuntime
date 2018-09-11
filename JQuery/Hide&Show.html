@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jQueryLibrary.js"></script>
+<script>
+$(document).ready(function(){
+    $("#hideIt").click(function(){
+        $("img#img").hide('slow');
+    });
+    $("#showIt").click(function(){
+        $("img#img").show('slow');
+    });
+    
+});
+</script>
+</head>
+<body>
+
+
+<img id = "img" src="Nature.jpeg"/>
+<div>
+<button id ="hideIt">HideIt</button>
+<button id ="showIt">ShowIt</button>
+</div>
+
+</body>
+</html>

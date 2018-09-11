@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jQueryLibrary.js"></script>
+</head>
+
+<body>
+    <div class="Container"></div>
+ <div class = "Card One">
+     <h2>I am card One</h2>
+     <p>I am a king in the pack of 52 cards</p>
+ </div>
+
+ <div class = "Card Two">
+        <h2>I am card Two</h2>
+        <p>I am a Queen in the pack of 52 cards</p>
+    </div>
+
+    <div class = "Card Three">
+            <h2>I am card Three</h2>
+            <p>I am a Spade in the pack of 52 cards</p>
+        </div>
+
+        <div class = "Card Four">
+                <h2>I am card Four</h2>
+                <p>I am a Club in the pack of 52 cards</p>
+            </div>
+
+            <div class = "clear"></div>
+            <div class = "all-center">
+                <button id= "GetContent" >GetHTMLContent</button>
+                <button id= "SetContent">SetHTMLContent</button>
+            </div>
+
+            <script> 
+                    $(document).ready(function(){
+                        var CardOne = $(".Card.One");
+                        var CardTwo = $(".Card.Two");
+                        var CardThree = $(".Card.Three");
+                        var CardFour = $(".Card.Four");
+
+                  //Get Content by HTML-return the content of selected element
+                        $("#GetContent").click(function(){
+                           alert(CardOne.html());
+                        });
+                       
+                        $("#GetContent").click(function(){
+                           document.write(CardOne.html());
+                        });
+                    //Set Content dynamically
+                    $("#SetContent").click(function(){
+                           CardTwo.html("<h2>text content of card Two changed successfully</h2>");
+                        });
+                       
+                       
+                    });
+                    </script> 
+</body>
+</html>

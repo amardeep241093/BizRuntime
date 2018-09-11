@@ -5,7 +5,7 @@
 <script>
 $(document).ready(function(){
     $("button").click(function(){
-        $("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+        $("#p2").css("color", "red").slideUp(2000).slideDown(2000).slideToggle(2000).stop();
     });
 });
 </script>
@@ -13,6 +13,12 @@ $(document).ready(function(){
 <body>
 
 <p id="p1">jQuery is fun!!</p>
+<p id = "p2">Sachin Ramesh Tendulkar (/ˌsʌtʃɪn tɛnˈduːlkər/ (About this sound listen); born 24 April 1973) is a former 
+    Indian international cricketer and a former captain of the Indian national team,
+     regarded as one of the greatest batsmen of all time.[4] He is the highest run scorer of all time in 
+     International cricket. Tendulkar took up cricket at the age of eleven, made his Test debut on 15 November 1989 against
+      Pakistan in Karachi at the age of sixteen, and went on to represent Mumbai domestically and
+       India internationally for close to twenty-four years.</p>
 
 <button>Click me</button>
 
