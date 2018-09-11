@@ -7,17 +7,17 @@
 
 <div id ="Group">Display the message</div>
 <form>
-<button type="button" onclick = "GetData('J:\Ajax\Hello.txt')">Fetch the data1</button>
-<button type="button" onclick = "GetData('J:\Ajax\Hello1.txt')">Fetch the data2</button>
+<button type="button" onclick = "GetData()">Fetch the data1</button>
+<!-- <button type="button" onclick = "GetData('J:\Ajax\Hello1.txt')">Fetch the data2</button> -->
 </form>
 
 <body>
     <script type="text/javascript">
     
-       function GetData(dataSource)
+       function GetData()
        {
          var XmlHttpRequestObject = new XMLHttpRequest();
-         XmlHttpRequestObject.open("GET", dataSource, true);
+         XmlHttpRequestObject.open("GET", "data.txt", true);
          XmlHttpRequestObject.onreadystatechange = function()
          {
              if((XmlHttpRequestObject.readyState == 4) && (XmlHttpRequestObject.status == 200))
