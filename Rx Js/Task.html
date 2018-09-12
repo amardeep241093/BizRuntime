@@ -4,41 +4,21 @@
         <script src="Rx Js.js"></script>
 </head>
 <body>
-     <div id = "page"></div>
+     <div>update the value</div>
     <script>
-        var observable = Rx.Observable.interval(1000);
-        var observer = {
-           next : function(value){
-               document.getElementById("page").innerHTML = value;},
-               next : function(data){
-               document.getElementById("page").innerHTML = data;},
-               next : function(dataSource){
-               document.getElementById("page").innerHTML = dataSource;
-           },
-           error : function(error){
-           console.log(error);
-           },
-           complete : function(){
-               console.log('completed');
-           }
-      };
-      observable.map(function(value)
-      {
-        value.next(value); 
-        return value ^ 2;
-      }).subscribe(observer);
-      observable.map(function(data)
-      {
-        data.next(data); 
-        return data^ 3;
-      }).subscribe(observer);
-
-      observable.map(function(dataSource)
-      {
-        dataSource.next(dataSource); 
-        return dataSource ^ 4;
-      }).subscribe(observer);
-
+       
+       var obs = Rx.Observable.create(observer => {
+           observer.next(3);
+       })
+       obs.subscribe({
+           next : (v) => console.log(value * value)
+       });
+       obs.subscribe({
+           next : (v) => console.log(value * value * value)
+       });
+       obs.subscribe({
+           next : (v) => console.log(value * value * value)
+       });
     </script>
  
 </body>

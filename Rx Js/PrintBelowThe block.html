@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="Rx Js.js"></script>
+</head>
+<body>
+        <input type="text">
+       <p></p>
+        <button type="button">  Print Below  </button>
+        
+  <script>
+        const node = document.querySelector('input');
+        const p = document.querySelector('p');
+
+         function Observable(subscribe) {
+         this.subscribe = subscribe;
+          }
+
+        Observable.prototype.map = function (mapFn) {
+        const input = this;
+        return new Observable((observer) => {
+        return input.subscribe({
+        next: (value) => observer.next(mapFn(value)),
+        error: (err) => observer.error(err),
+        complete: () => observer.complete()
+    });
+  });
+};
+
+      Observable.fromEvent = (element, name) => {
+      return new Observable((observer) => {
+      const callback = (event) => observer.next(event);
+      element.addEventListener(name, callback, false);
+      return () => element.removeEventListener(name, callback, false);
+  });
+};
+
+     const input$ = Observable.fromEvent(node, 'input')
+	 .map(event => event.target.value);
+
+     const unsubscribe = input$.subscribe({
+     next: (value) => {
+      p.innerHTML = value;
+  }
+});
+
+// avert your eyes
+document.querySelector('button').addEventListener('click', unsubscribe);
+	
+	
+ </script>
+
+ 
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="Rx Js.js"></script>
+</head>
+<body>
+        <input type="text">
+        <p></p>
+        <button type="button">  Print Below  </button>
+        <script>
+        const node = document.querySelector('input');
+        const p = document.querySelector('p');
+        
+        function Observable(subscribe) {
+          this.subscribe = subscribe;
+        }
+        
+        Observable.fromEvent = (element, name) => {
+          return new Observable((observer) => {
+            const callback = (event) => observer.next(event);
+            element.addEventListener(name, callback, false);
+            return () => element.removeEventListener(name, callback, false);
+          });
+        };
+        
+        const input$ = Observable.fromEvent(node, 'input');
+        
+        input$.subscribe({
+          next: (event) => {
+            p.innerHTML = event.target.value;
+          }
+        });
+	
+ </script>
+
+ 
+</body>
+</html>
+
+<!--
+This example takes an <input type="text"> element and passes it into Rx.Observable.fromEvent(), which returns us an Observable of our input’s Event object when the event name we specified emits (which is why we’re using ${event.target.value} in the console).
+-->

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>It willsend old values to the new subscriber</title>
+        <script src="Rx Js.js"></script>
+</head>
+<body>
+    <script>
+ 
+      var subject= new Rx.ReplaySubject(3);
+      subject.subscribe({
+          next:(v) => console.log('observerA: ' + v)
+      });  
+      subject.next(2);
+      subject.next(3);
+      subject.next(4);
+      subject.next(5);
+      subject.next(6);
+    
+      subject.subscribe({
+          next:(v) => console.log('observerB: ' + v)
+      });  
+      subject.next(8);
+      subject.next(9);
+      subject.next(10);
+      subject.next(11);
+      subject.subscribe({
+          next:(v) => console.log('observerC: ' + v)
+      });  
+      subject.next(12);
+     
+
+      
+      
+     
+          
+    
+
+     
+   </script>
+ 
+</body>
+</html>

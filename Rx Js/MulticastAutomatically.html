@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="Rx Js.js"></script>
+</head>
+<body>
+
+    <script>
+    
+    var obs = Rx.Observable.from([1,2,3]);
+    var subject = new Rx.Subject();
+    var refCounted = obs.multicast(subject).refCount();
+    var subscriptionConnect,subscription2;
+
+   console.log('observer1 subscribed')
+   var subscription1 =  refCounted.subscribe({
+       
+        next:(v) => console.log("subscriber1" + v)
+    });
+    // This calls `connect()`, because
+    // it is the first subscriber to `refCounted`
+     setTimeout(() =>{ 
+         console.log('observer2 subscribed');
+         subscription2 = refCounted.subscribe({
+             next : (v) => console.log("subscriber2" + v)
+         });
+     }, 500);
+
+    setTimeout(() =>{
+       subscription1.unsubscribe();
+    }, 2000);
+
+   // This is when the shared Observable execution will stop, because
+  // `refCounted` would have no more subscribers after this
+  setTimeout(() => {
+  subscription2.unsubscribe();
+  }, 2000);
+
+ </script>
+ 
+</body>
+</html>
