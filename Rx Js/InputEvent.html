@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="Rx Js.js"></script>
+</head>
+<body>
+   <div id = "page"></div>
+    validation:<input type = "text"> 
+    <script>
+         var div = document.getElementById("page");
+        var input = document.querySelector('input');
+        var observable = Rx.Observable.fromEvent(input, "input");
+      /*  observable.subscribe({
+            next : function(event){
+                console.log(event.target.value);   //sending multiple request for every input event
+                div.append(event.target.value);
+            }
+        });
+     */
+     observable
+     .map(event => event.target.value)//transformation the values total input values(checking with prev value)
+     .debounceTime(2000)  //it will emit new value after 2s
+     .distinctUntilChanged() //it will emit new value
+     .subscribe({
+            next : function(value){
+                console.log(value);   //sending multiple request for every input event
+                div.append(value);
+            }
+        });
+    </script>
+ 
+</body>
+</html>

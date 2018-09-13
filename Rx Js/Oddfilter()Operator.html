@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="Rx Js.js"></script>
+</head>
+<body>
+     <p>dispaly the value</p>
+     <div id = "Div"></div>
+     <!--<div id = "demo"></div> -->
+   
+    <script>
+      
+       var div =   document.getElementById('Div');
+      // var div =   document.getElementById('demo');
+        var observable = Rx.Observable.interval(1000);
+        observable
+        //filter will take the value and decide whether it should continue the journey or not
+        .filter(function(value){
+            return value % 2 != 0;
+        })
+        //subscribe on the new observable
+        .subscribe({
+            //emit the new observable
+            next : function(value){
+           //console.log(value);
+           div.append(value + "  "); //appendd the value o the browser
+            },
+           
+            complete : function(){
+                console.log("complete");
+            }
+        });
+       
+
+    </script>
+ 
+</body>
+</html>

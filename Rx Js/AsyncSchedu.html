@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="Rx Js.js"></script>
+</head>
+<body>
+
+    <script>
+        const task = () => console.log('it works!');
+        Rx.Scheduler.async.schedule(() => console.log('async')); // scheduling 'async' first...
+        Rx.Scheduler.asap.schedule(() => console.log('asap'));
+        Rx.Scheduler.async.schedule(task, 2000);
+
+</script>
+ 
+</body>
+</html>

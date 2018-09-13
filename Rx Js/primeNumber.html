@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="Rx Js.js"></script>
+</head>
+<body>
+    <script>
+      var source = Rx.Observable.range(1, 100);
+      var prime = source.filter(num => {
+      for(var i = 2; i < num; i++)
+       {
+         if(num % i === 0)
+          {
+            return false;
+          }
+       }
+
+    return num > 1;
+    }
+);
+var subscribe = prime.subscribe(val => console.log(`Prime number: ${val}`));
+</script>
+
+ 
+</body>
+</html>
