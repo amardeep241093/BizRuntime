@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace ConsoleApp5.ADO.net
 {
-    class Employee
+    class Student
     {
         static void Main(string[] args)
         {
@@ -15,9 +15,9 @@ namespace ConsoleApp5.ADO.net
             try
             {
                 // Creating Connection  
-                con = new SqlConnection("Data Source=DELL-PC\\SQLEXPRESS;Initial Catalog=Employee;Integrated Security=True");
+                con = new SqlConnection("Data Source=DELL-PC\\SQLEXPRESS;Initial Catalog=Student;Integrated Security=True");
                 // writing sql query  
-                SqlCommand cm = new SqlCommand("create table Employee(id int not null,name varchar(100), email varchar(50), join_date date)", con);
+                SqlCommand cm = new SqlCommand("create table student(id int not null,name varchar(100), email varchar(50), join_date date)", con);
                 // Opening Connection  
                 con.Open();
                 // Executing the SQL query  

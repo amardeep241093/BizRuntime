@@ -7,27 +7,28 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp7.ADO.net
 {
-    class Employee1
+    class Delete
     {
         static void Main(string[] args)
-        {
-            new Employee1().CreateTable();
-        }
-        public void CreateTable()
         {
             SqlConnection con = null;
             try
             {
                 // Creating Connection  
-                con = new SqlConnection("data source=DELL-PC\\SQLEXPRESS; database=Employee; integrated security=SSPI");
+                con = new SqlConnection("data source=DELL-PC\\SQLEXPRESS; database=Student; integrated security=SSPI");
+
                 // writing sql query  
-                SqlCommand cm = new SqlCommand("insert into Employee(id, name, email, join_date)values('101', 'Amardeep', 'amardeep@gmail.com', '1/12/2017')", con);  
+                SqlCommand cm = new SqlCommand("delete from student where id = '101'", con);
+
                 // Opening Connection  
                 con.Open();
+
                 // Executing the SQL query  
                 cm.ExecuteNonQuery();
                 // Displaying a message  
-                Console.WriteLine("Record Inserted Successfully");
+                Console.WriteLine("Record deleted Successfully");
+
+
             }
             catch (Exception e)
             {

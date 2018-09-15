@@ -33,11 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ConsoleApp7.ADO.net.Employee1</StartupObject>
+    <StartupObject>ConsoleApp7.Rx.net.IgnoreElement</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,19 +58,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADO.net\Employee.cs" />
-    <Compile Include="ADO.net\Employee1.cs" />
+    <Compile Include="ADO.net\Delete.cs" />
+    <Compile Include="ADO.net\SerializeClass.cs" />
+    <Compile Include="ADO.net\Student.cs" />
+    <Compile Include="ADO.net\insert.cs" />
+    <Compile Include="ADO.net\Select.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rx.net\AsyncSubject.cs" />
     <Compile Include="Rx.net\BehaviorSubject.cs" />
+    <Compile Include="Rx.net\Distinct.cs" />
+    <Compile Include="Rx.net\DistinctUntilChanged.cs" />
+    <Compile Include="Rx.net\ExceptionHandling.cs" />
+    <Compile Include="Rx.net\FactoryMethod.cs" />
+    <Compile Include="Rx.net\IDisposable.cs" />
+    <Compile Include="Rx.net\IgnoreElement.cs" />
+    <Compile Include="Rx.net\ImplementingObserver.cs" />
+    <Compile Include="Rx.net\Implicit.cs" />
     <Compile Include="Rx.net\Observer.cs" />
     <Compile Include="Rx.net\Program.cs" />
     <Compile Include="Rx.net\Program2.cs" />
+    <Compile Include="Rx.net\Range.cs" />
     <Compile Include="Rx.net\ReplaySubject.cs" />
-    <Compile Include="Rx.net\Subject.cs" />
+    <Compile Include="Rx.net\Subject1.cs" />
+    <Compile Include="Rx.net\Unsubscribe.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

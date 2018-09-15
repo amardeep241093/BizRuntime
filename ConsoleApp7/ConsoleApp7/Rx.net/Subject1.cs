@@ -5,30 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
+
 namespace ConsoleApp5
 {
-    class ReplaySubject
+    class Subject1
     {
         static void Main(string[] args)
         {
-            
-            var subject = new ReplaySubject<string>();
-            subject.OnNext("a");
+            var subject = new Subject<string>();
             WriteSequenceToConsole(subject);
+            subject.OnNext("a");
             subject.OnNext("b");
             subject.OnNext("c");
             Console.ReadKey();
         }
-
-      //  Takes an IObservable<string> as its parameter.
-       // ReplaySubject<string> implements this interface.
-
-        private static void WriteSequenceToConsole(ReplaySubject<string> subject)
+        //Takes an IObservable<string> as its parameter. 
+        //Subject<string> implements this interface.
+        static void WriteSequenceToConsole(IObservable<string> sequence)
         {
             //The next two lines are equivalent.
             //sequence.Subscribe(value=>Console.WriteLine(value));
-            subject.Subscribe(Console.WriteLine);
+            sequence.Subscribe(Console.WriteLine);
         }
     }
-
 }
+
