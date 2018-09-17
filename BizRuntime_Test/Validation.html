@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+</head>
+<body>
+    <h1 class="text-center bg-dark text-white">Form validation</h1>
+    <div class="container">
+        <br />
+        <form action="Display.html" id="my_form" method="post" onsubmit="return validation()">
+
+            <div class="form-group">
+                <label>UserName:</label>
+                <input type="text" name="" id="username" class="form-control" />
+                <span id="usererror" class="text-dangerr font-weight-bold"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Email-id:</label>
+                <input type="email"  id="Email" class="form-control" />
+                <span id="Emailerror" class="text-dangerr font-weight-bold"></span>
+            </div>
+            <div class="form-group">
+                <label>Country list:</label>
+                <select name="contry" id="country" class="form-control">
+                    <option value="" selected="selected">select</option>
+                    <option value="IN">India</option>
+                    <option value="US">U.S.A</option>
+                    <option value="CND">Canada</option>
+                    <option value="AUS">Australia</option>
+                    <option value="CHN">China</option>
+                    <option value="RUS">Russia</option>
+                    <option value="JPN">Japan</option>
+                    <option value="KOR">Korea</option>
+                    <option value="SA">South Africa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <INPUT Id="Gender" TYPE="RADIO" NAME="Gender1">MALE
+                <INPUT Id="Gender" TYPE="RADIO" NAME=" Gender2">FEMALE
+            </div>
+            <div class="form-group">
+                <label>Course</label>
+                <input type="button" value="selected options"/>
+                <select id=" edu" name="educations" multiple>
+                    <option value="1">BE </option>
+                    <option value="2">B.Sc </option>
+                    <option value="3">MCA </option>
+                    <option value="4">BCA</option>
+                    <option value="5">B.TECH</option>
+                    <option value="6">M.TECH</option>
+                    <option value="7">MBA</option>
+                </select></br>
+            </div>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" name="" id="Password" class="form-control" />
+                    <span id="passworderror" class="text-dangerr font-weight-bold"></span>
+                </div>
+                <input type="submit" name="" class="btn btn-primary" />
+        </form>
+    </div>
+    <script>
+       
+       function validation() {
+
+           var username = document.getElementById('username').value;
+           var Email = document.getElementById('Email').value;
+           var Gender = document.getElementById('Gender').value;
+           var Country = document.getElementById('country').value;
+           var Course = document.getElementById('edu').value;
+           var Password = document.getElementById('Password').value;
+
+           var usercheck = /^[A-Za-z. ]{8}$/;
+         
+           var emailcheck = /^[A-Za-z_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+           var passwordcheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+
+
+           if (usercheck.test(username))
+           {
+               document.getElementById('usererror').innerHTML = " ";
+           }
+           else
+           {
+               document.getElementById('usererror').innerHTML = "** user name not correct";
+               return false;
+           }
+
+           if (passwordcheck.test(Password))
+           {
+               document.getElementById('passworderror').innerHTML = " ";
+           }
+           else
+           {
+               document.getElementById('passworderror').innerHTML = "** enter valid password";
+               return false;
+           }
+
+
+           localStorage.setItem("Username1", username);
+           localStorage.setItem("Countries", country);
+           localStorage.setItem("Emails1", Email);
+           localStorage.setItem("Gender1", Gender);
+           localStorage.setItem("Course", edu);
+           localStorage.setItem("Passwords1", Password);
+       }
+    </script>
+</body>
+</html>  

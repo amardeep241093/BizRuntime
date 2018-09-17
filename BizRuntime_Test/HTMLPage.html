@@ -1,0 +1,47 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="Rx Js.js"></script>
+</head>
+<body>
+    <div id="page"></div>
+    <input type="text">
+    <script>
+         var div = document.getElementById("page");
+        var input = document.querySelector('input');
+        var observable = Rx.Observable.fromEvent(input, "input");
+
+        observable.filter(event => {
+            var nam = f.nm.value;
+            if (!isNaN(nam))
+               
+        }).subscribe({
+            next : function(event){
+                div.append(event.target.value);
+            }
+        });
+     
+     observable
+     .map(event => event.target.value)
+     
+     .subscribe({
+            next : function(value){
+                console.log(value);   
+                div.append(value);
+            }
+            });
+
+        observable
+            .map(event => event.target.value)
+
+            .subscribe({
+                next: function (value) {
+                    console.log(value);
+                    div.append(value);
+                }
+            });
+    </script>
+
+</body>
+</html>

@@ -58,8 +58,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADO.net\DataSet.cs" />
     <Compile Include="ADO.net\Delete.cs" />
-    <Compile Include="ADO.net\SerializeClass.cs" />
     <Compile Include="ADO.net\Student.cs" />
     <Compile Include="ADO.net\insert.cs" />
     <Compile Include="ADO.net\Select.cs" />
@@ -79,6 +79,7 @@
     <Compile Include="Rx.net\Program2.cs" />
     <Compile Include="Rx.net\Range.cs" />
     <Compile Include="Rx.net\ReplaySubject.cs" />
+    <Compile Include="Rx.net\SkipAndTake.cs" />
     <Compile Include="Rx.net\Subject1.cs" />
     <Compile Include="Rx.net\Unsubscribe.cs" />
   </ItemGroup>
@@ -86,5 +87,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
