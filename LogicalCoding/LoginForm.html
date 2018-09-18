@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html>
+<head>
+    
+    <title>Login Form</title>
+</head>
+
+<body>
+    <form name="myF">
+        Email <input id="numb1">
+        <p id="demo2"></p>
+        Password <input id="numb2"><br />
+
+        <button id="btn" type="button" onclick="myfun()">submit</button><br />
+    </form>
+    <script>
+        function myfun() {
+            var email, pass;
+            email = document.myF.numb1.value;
+            pass = document.myF.numb2.value;
+
+            var eml = localStorage.getItem('email');
+            var pw = localStorage.getItem('pass');
+            if ((email == eml) && (pass == pw)) {
+                document.write("login successfully");
+            }
+            else {
+                alert("Please Enter Valid email and password")
+            }
+        }
+    </script>
+</body>
+</html>

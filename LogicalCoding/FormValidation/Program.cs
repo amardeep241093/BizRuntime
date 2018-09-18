@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Registration form</title>
+    <script src = 'https://www.google.com/recaptcha/api.js' ></ script >
+</ head >
+< body >
+    < form action= "/Login Form.html" >
+        < h2 > Regestration Form</h2>
+        Name <input id = "numb1" >< br />
+        < p id= "demo1" ></ p >
+        Email < input id= "numb2" >< br />
+        < p id= "demo2" ></ p >
+        Password < input id= "numb3" >< br />
+        < p id= "demo3" ></ p >
+        Phone Number<input id="numb4"><br />
+        <p id = "demo4" ></ p >
+        Address < input id= "numb5" >< br />
+        < p id= "demo5" ></ p >
+        < button type= "button" onclick= "myFunction()" > Submit </ button >
+        < !--< button type= "button" onclick= "Store()" > Store </ button > -->
+        < button type= "button" onclick= "myFunction1()" > Refresh </ button >
+    </ form >
+    < !--< div class="g-recaptcha" data-sitekey="6LdcomcUAAAAAJLoPh_xTPGRei8-ZPgGj09Oyf6X"></div>-->
+
+    
+
+    <p id = "demo1" ></ p >
+
+    < style >
+        p {
+            color: red;
+        }
+    </style>
+
+    <script>
+        function myFunction1()
+{
+    location.reload();
+}
+function myFunction()
+{
+    var x, a, b, c, d, e, text;
+    var name = /^\(?=.*[A - Z]{ 5,})$/;
+    var add = /^\w{ 10,100}$/;
+    var phone = /^\d{ 10}$/;
+
+    var password = / (?=^.{ 8,}$)((?=.*\d)| (?=.*\W{ 3}))(? ![.\n])(?=.*[A - Z]{ 2,3})(?=.*[@$%]{ 3,4})(?=.*[a - z]).*$/;
+    //var password = /(?=^.{8,}$)((?=.*\d{0,3})|(?=.*\W+))(?![.\n])(?=.*[A-Z]{0,2})(?=.*[a-z]).*$/;
+    //var password = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]{2, })(?=.*[@#$%]{3, }).{8, })";
+    //var password = /^(?=.*[a-z])(?=.*[A-Z]{2, })(?=.*[@#$%]{3, }).{8,20})/;
+    var mailformat = /^\w + ([\.-] ?\w +)*@\w + ([\.-] ?\w +)*(\.\w{ 2,3})+$/;
+    x = document.getElementById("numb1").value;
+    a = document.getElementById("numb2").value;
+    b = document.getElementById("numb3").value;
+    c = document.getElementById("numb4").value;
+    d = document.getElementById("numb5").value;
+    if (!x.match(name))
+    {
+        alert("Enter Valid name");
+    }
+    else if (!a.match(mailformat))
+    {
+        alert("Enter valid Email");
+    }
+    else if (!b.match(password))
+    {
+        alert("Enter Valid Password");
+    }
+    else if (!c.match(phone))
+    {
+        alert("Enter valid mobile number");
+    }
+
+    else
+    {
+        document.write("Name : " + x + "<br>");
+        document.write("Email : " + a + "<br>");
+        document.write("Password : " + b + "<br>");
+        document.write("Contact : " + c + "<br>");
+        document.write("Address : " + d + "<br>");
+        document.write("<br>Registered Successfully")
+                localStorage.setItem('name', x);
+        localStorage.setItem('email', a);
+        localStorage.setItem('pass', b);
+        localStorage.setItem('phone', c);
+        localStorage.setItem('add', d);
+    }
+}
+        
+    </script>
+
+</body>
+</html>
