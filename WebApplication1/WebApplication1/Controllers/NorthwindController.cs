@@ -12,10 +12,12 @@ namespace WebApplication1.Controllers
         //context class are responsibilites of connection to database
         NorthWindContext db = new NorthWindContext();
         public ActionResult Index()
-        {
-            db.CategoriesTable.ToList();
-            db.ProductsTable.ToList();
-            return View();
+         {
+             db.CategoriesTable.ToList();
+             db.ProductsTable.ToList();
+             return View();
+          }
+               
+            
         }
     }
-}
