@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelFirstApproach", "Model
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD_Operation", "CRUD_Operation\CRUD_Operation.csproj", "{C20012CC-685D-472B-948D-D58CC0DE5CFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD_Operation2", "CRUD_Operation2\CRUD_Operation2.csproj", "{C344D515-FED1-4EDC-9768-F55567384B15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD_Operation3", "CRUD_Operation3\CRUD_Operation3.csproj", "{5ABCAE82-476D-4CC0-8B2D-5BE2BFC4339B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{C20012CC-685D-472B-948D-D58CC0DE5CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C20012CC-685D-472B-948D-D58CC0DE5CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C20012CC-685D-472B-948D-D58CC0DE5CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C344D515-FED1-4EDC-9768-F55567384B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C344D515-FED1-4EDC-9768-F55567384B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C344D515-FED1-4EDC-9768-F55567384B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C344D515-FED1-4EDC-9768-F55567384B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ABCAE82-476D-4CC0-8B2D-5BE2BFC4339B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ABCAE82-476D-4CC0-8B2D-5BE2BFC4339B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ABCAE82-476D-4CC0-8B2D-5BE2BFC4339B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ABCAE82-476D-4CC0-8B2D-5BE2BFC4339B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
